@@ -1,6 +1,13 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `http://localhost:8000/`,
   },
-  plugins: [],
+  plugins: [
+  	{
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: process.env.WPGRAPHQL_URL || `http://localhost:8000/graphql`,
+      },
+    },
+  ],
 }
